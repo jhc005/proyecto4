@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { generarCategoriaAleatoria, generarDisplayInicial, generarPalabraAleatoria, realizarIntento } from './helpers/Funciones'
 import Teclado from './components/Teclado'
 import Marcador from './components/Marcador'
+import Horca from './components/Horca'
 
 export default function App() {
   const [Categoria,setCategoria]=useState("")
@@ -56,6 +57,7 @@ function inicializarPartida(){
   return (
     <View style={styles.contenedor}>
       <Text style={styles.categoriaTexto}>{Categoria}</Text>
+      <Horca vidas={Vidas}></Horca>
       <Teclado pulsarLetra={pulsarLetra} letrasUsadas={LetrasUsadas}/>
       <Text style={styles.displayTexto}>{Display}</Text>
       <Marcador victorias={Victorias} derrotas={Derrotas}/>
